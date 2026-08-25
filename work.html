@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Work - Gia Khanh</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <a href="./index.html">HOME</a>
+    <a href="./about.html">ABOUT</a>
+    <a href="./contact.html">CONTACT</a>
+</nav>
+<main class="work-page">
+
+
+</div>
+
+    <!-- LEFT: 90s WINDOW -->
+    <section class="work-window">
+
+        <div class="window-topbar">
+
+            <div class="window-title">
+                MY WORK
+            </div>
+
+            <div class="window-buttons">
+                <button class="window-btn">−</button>
+                <button class="window-btn">□</button>
+                <button class="window-btn">×</button>
+            </div>
+
+        </div>
+
+        <div class="window-screen">
+
+    <div class="work-placeholder" id="work-placeholder">
+        SELECT A PROJECT
+    </div>
+
+    <img
+        id="work-preview-image"
+        class="work-preview-media"
+        src=""
+        alt="Project preview"
+    >
+
+    <video
+        id="work-preview-video"
+        class="work-preview-media"
+        muted
+        loop
+        playsinline
+    ></video>
+
+</div>
+
+    </section>
+
+
+    <!-- RIGHT: PROJECT LIST -->
+    <section class="project-list">
+
+    <h1 class="project-list-title">Project List</h1>
+
+    <div class="project-divider"></div>
+
+    <!-- THIS PART SCROLLS -->
+    <div class="project-scroll">
+
+    <a
+    class="project-item"
+    href="https://lingyuee.itch.io/echoes-of-the-light"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-src="./images/EoL.png"
+    data-type="image"
+>
+    <span
+        class="project-name"
+        data-original="Echoes of The Light"
+        data-hover="Play the game?"
+    >
+        Echoes of The Light
+    </span>
+
+    <span class="project-type">
+        Visual Novel Game
+    </span>
+</a>
+
+
+    <button
+        class="project-item"
+        data-src="./images/wedding.png"
+        data-type="image"
+    >
+        <span class="project-name">
+            Raiden Mei & Kiana Kaslana Wedding
+        </span>
+        <span class="project-type">Offline Event</span>
+    </button>
+
+
+    <button
+        class="project-item"
+        data-src="./images/puppet.png"
+        data-type="image"
+    >
+        <span class="project-name">White Lotus Harmonics</span>
+        <span class="project-type">Figma Based Web</span>
+    </button>
+
+
+    <button
+        class="project-item"
+        data-src="./images/soup.png"
+        data-type="image"
+    >
+        <span class="project-name">Swiftlet's Nest Soup</span>
+        <span class="project-type">Figma Based Game</span>
+    </button>
+
+    <button
+    class="project-item"
+    data-src="./images/higan.mp4"
+    data-type="video"
+>
+    <span class="project-name">Higanbana</span>
+    <span class="project-type">Frame to Frame Animation</span>
+</button>
+<video
+    id="work-preview-video"
+    class="work-preview-media"
+    muted
+    loop
+    playsinline
+></video>
+<<!-- WITCH HAT ATELIER -->
+<button
+    class="project-item"
+    data-src="./images/witch.png"
+    data-type="image"
+    data-action="gallery"
+    data-gallery="Witch Hat Atelier"
+>
+    <span
+        class="project-name"
+        data-original="Witch Hat Atelier"
+        data-hover="Watch the gallery?"
+    >
+        Witch Hat Atelier
+    </span>
+
+    <span class="project-type">
+        Cosplay Photography
+    </span>
+</button>
+
+
+<!-- UMAMUSUME -->
+<button
+    class="project-item"
+    data-src="./images/uma.png"
+    data-type="image"
+    data-action="gallery"
+    data-gallery="Umamusume: Pretty Derby"
+>
+    <span
+        class="project-name"
+        data-original="Umamusume: Pretty Derby"
+        data-hover="Watch the gallery?"
+    >
+        Umamusume: Pretty Derby
+    </span>
+
+    <span class="project-type">
+        Cosplay Photography
+    </span>
+</button>
+<!-- ================================= -->
+<!-- RETRO COSPLAY GALLERY WINDOW      -->
+<!-- ================================= -->
+
+<div class="gallery-overlay" id="gallery-overlay">
+
+    <div class="gallery-window">
+
+        <!-- TOP BAR -->
+        <div class="gallery-topbar">
+
+            <span id="gallery-title">
+                Gallery
+            </span>
+
+            <div class="gallery-buttons">
+
+                <button
+                    class="gallery-window-btn"
+                    type="button"
+                >
+                    −
+                </button>
+
+                <button
+                    class="gallery-window-btn"
+                    type="button"
+                >
+                    □
+                </button>
+
+                <button
+                    class="gallery-window-btn gallery-close"
+                    id="gallery-close"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO GRID -->
+        <div class="gallery-screen">
+
+            <div
+                class="gallery-grid"
+                id="gallery-grid"
+            >
+                <!-- JavaScript puts photos here -->
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- LARGE PHOTO VIEWER                -->
+<!-- ================================= -->
+
+<div class="photo-viewer" id="photo-viewer">
+
+    <img
+        src=""
+        id="photo-viewer-image"
+        class="photo-viewer-image"
+        alt="Gallery photo"
+    >
+
+</div>
+</div>
+</section>  
+<script>
+    const projectItems = document.querySelectorAll(".project-item");
+
+    const previewImage =
+        document.getElementById("work-preview-image");
+
+    const previewVideo =
+        document.getElementById("work-preview-video");
+
+    const placeholder =
+        document.getElementById("work-placeholder");
+
+
+    projectItems.forEach((item) => {
+
+        const projectTitle =
+            item.querySelector(".project-name");
+
+        projectTitle.addEventListener("mouseenter", () => {
+
+            const src = item.dataset.src;
+            const type = item.dataset.type;
+
+            placeholder.style.display = "none";
+
+
+            if (type === "image") {
+
+                previewVideo.pause();
+                previewVideo.style.display = "none";
+
+                previewImage.src = src;
+                previewImage.style.display = "block";
+
+            }
+
+
+           if (type === "video") {
+    previewImage.style.display = "none";
+
+    previewVideo.pause();
+    previewVideo.src = src;
+    previewVideo.style.display = "block";
+
+    previewVideo.load();
+
+    previewVideo.play().catch((error) => {
+        console.log("Video could not autoplay:", error);
+    });
+}
+
+        });
+
+    });
+    
+</script>
+<script>
+    const interactiveProjects =
+        document.querySelectorAll(".project-item");
+
+    const galleryOverlay =
+        document.getElementById("gallery-overlay");
+
+    const galleryTitle =
+        document.getElementById("gallery-title");
+
+    const galleryClose =
+        document.getElementById("gallery-close");
+
+
+    interactiveProjects.forEach(project) => 
+
+        const name =
+            project.querySelector(".project-name");
+
+        /* CHANGE WORDS ON HOVER */
+        if (name.dataset.hover) {
+
+            project.addEventListener("mouseenter", () => {
+                name.textContent = name.dataset.hover;
+            });
+
+            project.addEventListener("mouseleave", () => {
+                name.textContent = name.dataset.original;
+            });
+
+        }
+
+
+        /* CLICK ACTION */
+        project.addEventListener"click", () => 
+        
+            const action = project.dataset.action;
+
+
+            /* ECHOES OF THE LIGHT */
+           if (action === "game") {
+    window.open(
+        project.dataset.link,   
+        "_blank"
+    );
+}
+
+</script>
+<script>
+    /* ================================= */
+    /* GALLERY ELEMENTS                  */
+    /* ================================= */
+
+    const galleryOverlay =
+        document.getElementById("gallery-overlay");
+
+    const galleryGrid =
+        document.getElementById("gallery-grid");
+
+    const galleryTitle =
+        document.getElementById("gallery-title");
+
+    const galleryClose =
+        document.getElementById("gallery-close");
+
+    const photoViewer =
+        document.getElementById("photo-viewer");
+
+    const photoViewerImage =
+        document.getElementById("photo-viewer-image");
+
+
+    /* ================================= */
+    /* GALLERY PHOTOS                    */
+    /* ================================= */
+
+    const galleries = {
+
+        "Witch Hat Atelier": [
+            "./images/w1.png",
+            "./images/w2.png",
+            "./images/w3.png",
+            "./images/w4.png",
+            "./images/w5.png",
+            "./images/w6.png",
+            "./images/w7.png",
+            "./images/w8.png",
+            "./images/w9.png",
+            "./images/w10.png",
+            "./images/w11.png",
+            "./images/w12.png",
+            "./images/w13.png"
+        ],
+
+
+        "Umamusume: Pretty Derby": [
+            "./images/u1.png",
+            "./images/u2.png",
+            "./images/u3.png",
+            "./images/u4.png",
+            "./images/u5.png",
+            "./images/u6.png",
+            "./images/u7.png",
+            "./images/u8.png"
+        ]
+
+    };
+
+
+    /* ================================= */
+    /* BUILD GALLERY                     */
+    /* ================================= */
+
+    function loadGallery(galleryName) {
+
+        /* Remove old gallery photos */
+        galleryGrid.innerHTML = "";
+
+
+        const photos = galleries[galleryName];
+
+
+        if (!photos) {
+            return;
+        }
+
+
+        photos.forEach((photoSrc) => {
+
+            const image =
+                document.createElement("img");
+
+
+            image.src = photoSrc;
+
+            image.className =
+                "gallery-thumb";
+
+            image.alt =
+                galleryName + " photography";
+
+
+            /* CLICK PHOTO -> ENLARGE */
+            image.addEventListener(
+                "click",
+                (event) => {
+
+                    event.stopPropagation();
+
+                    photoViewerImage.src =
+                        photoSrc;
+
+                    photoViewer.classList.add(
+                        "photo-open"
+                    );
+
+                }
+            );
+
+
+            galleryGrid.appendChild(image);
+
+        });
+
+
+        /* Always start gallery from top */
+        galleryGrid.scrollTop = 0;
+    }
+
+
+    /* ================================= */
+    /* COSPLAY PROJECT BUTTONS           */
+    /* ================================= */
+
+    const galleryProjects =
+        document.querySelectorAll(
+            '.project-item[data-action="gallery"]'
+        );
+
+
+    galleryProjects.forEach((project) => {
+
+        const projectName =
+            project.querySelector(
+                ".project-name"
+            );
+
+
+        /* ----------------------------- */
+        /* CHANGE TEXT ON HOVER          */
+        /* ----------------------------- */
+
+        project.addEventListener(
+            "mouseenter",
+            () => {
+
+                if (projectName.dataset.hover) {
+
+                    projectName.textContent =
+                        projectName.dataset.hover;
+
+                }
+
+            }
+        );
+
+
+        project.addEventListener(
+            "mouseleave",
+            () => {
+
+                if (projectName.dataset.original) {
+
+                    projectName.textContent =
+                        projectName.dataset.original;
+
+                }
+
+            }
+        );
+
+
+        /* ----------------------------- */
+        /* OPEN GALLERY ON CLICK         */
+        /* ----------------------------- */
+
+        project.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                const galleryName =
+                    project.dataset.gallery;
+
+
+                galleryTitle.textContent =
+                    galleryName + " Gallery";
+
+
+                loadGallery(galleryName);
+
+
+                galleryOverlay.classList.add(
+                    "gallery-open"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* ================================= */
+    /* CLOSE GALLERY WITH X              */
+    /* ================================= */
+
+    galleryClose.addEventListener(
+        "click",
+        (event) => {
+
+            event.stopPropagation();
+
+            galleryOverlay.classList.remove(
+                "gallery-open"
+            );
+
+        }
+    );
+
+
+    /* ================================= */
+    /* CLICK OUTSIDE WINDOW TO CLOSE     */
+    /* ================================= */
+
+    galleryOverlay.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === galleryOverlay) {
+
+                galleryOverlay.classList.remove(
+                    "gallery-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* ================================= */
+    /* CLICK LARGE PHOTO -> CLOSE PHOTO  */
+    /* ================================= */
+
+    photoViewer.addEventListener(
+        "click",
+        () => {
+
+            photoViewer.classList.remove(
+                "photo-open"
+            );
+
+        }
+    );
+
+</script>
+</body>

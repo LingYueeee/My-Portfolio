@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - Gia Khanh</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <body>
+
+   <nav class="navbar">
+    <a href="./index.html">HOME</a>
+    <a href="./work.html">WORK</a>
+    <a href="./contact.html">CONTACT</a>
+</nav>
+
+    <!-- ABOUT BOX -->
+    <main class="about-content">
+
+        <div class="about-envelope">
+<!-- BOOKMARK TABS -->
+
+<div class="about-tabs">
+
+    <div class="about-tab about-tab-static">
+        MORE ABOUT ME
+    </div>
+
+    <button
+        class="about-tab about-tab-interactive"
+        data-popup="introduction-popup"
+        type="button"
+    >
+        INTRODUCTION
+    </button>
+
+    <button
+        class="about-tab about-tab-interactive"
+        data-popup="experience-popup"
+        type="button"
+    >
+        EXPERIENCE
+    </button>
+
+</div>
+
+
+<!-- INTRODUCTION POPUP -->
+
+<div class="about-side-popup" id="introduction-popup">
+
+    <div class="about-side-popup-inner">
+
+        <h2 class="popup-title">Introduction</h2>
+
+        <div class="popup-text">
+            <p>
+                Hi, I'm Khanh, otherwise known as <u>Yue</u>. I'm a
+                19-year-old student at RMIT University, majoring in
+                Digital Media. I'm also a self-taught photographer and
+                artist, currently open for commissions.
+            </p>
+
+            <p>
+                I have a deep passion for art, especially drawing and
+                illustration. As someone who is naturally quite shy,
+                I feel that art gives me a way to express my personality
+                and show my own colors without having to put everything
+                into words.
+            </p>
+
+            <p>
+                I love exploring different forms of art and find myself
+                easily drawn to new creative mediums and styles. I'm always
+                excited to experiment, learn new things, and step outside
+                of what I'm already familiar with.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EXPERIENCE POPUP -->
+
+<div class="about-side-popup" id="experience-popup">
+
+    <div class="about-side-popup-inner">
+
+        <h2 class="popup-title">Experience</h2>
+
+        <div class="popup-text">
+            <p>
+                I have been involved in art from a very young age. As a
+                child, I often took part in drawing and design competitions
+                and achieved several accomplishments that encouraged me to
+                continue pursuing art.
+            </p>
+
+            <p>
+                As I grew older, I began dedicating much of my time to
+                studying art, exploring different styles, and learning
+                about its history. I have also gained five years of
+                experience working as a freelance artist.
+            </p>
+
+            <p>
+                The programs I use most often for drawing and editing are
+                ibisPaint X, Adobe Photoshop, and Adobe Illustrator.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+            <div class="about-envelope-inner">
+                <div class="about-envelope-inner">
+<div class="about-signature">
+    <span class="signature-label">signature:</span>
+
+    <div class="signature-area">
+        <span class="signature-name">Khanh</span>
+        <div class="signature-line"></div>
+    </div>
+</div>
+    <h1 class="about-title">About Me</h1>
+
+    <!-- decorative borders -->
+
+    <!-- photo + info section -->
+
+</div>
+                <div class="about-info-layout">
+
+    <!-- PHOTO PLACEHOLDER -->
+    <div class="about-photo-frame">
+    <div class="about-photo-placeholder">
+        <img src="./images/me.png" class="about-photo" alt="Photo of me">
+    </div>
+</div>
+
+
+    <!-- PERSONAL INFO LINES -->
+    <div class="about-info-lines">
+
+    <div class="info-line">
+        <span class="info-label">NICKNAME</span>
+        <span class="info-value">Yue</span>
+    </div>
+
+    <div class="info-line">
+        <span class="info-label">BIRTHDAY</span>
+        <span class="info-value">August 16, 2007</span>
+    </div>
+
+    <div class="info-line">
+        <span class="info-label">ZODIAC SIGN</span>
+        <span class="info-value">Leo</span>
+    </div>
+
+    <div class="info-line">
+        <span class="info-label">HOBBIES</span>
+        <span class="info-value">Drawing, Cosplay</span>
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+    <!-- Decorative border -->
+    <img src="./images/border.png"
+         class="letter-border border-top-left"
+         alt="">
+
+    <img src="./images/border.png"
+         class="letter-border border-top-right"
+         alt="">
+
+    <img src="./images/border.png"
+         class="letter-border border-bottom-left"
+         alt="">
+
+    <img src="./images/border.png"
+         class="letter-border border-bottom-right"
+         alt="">
+
+    <!-- About content will go here later -->
+
+</div>
+   <!-- DECORATIVE STICKERS -->
+
+    <img
+        src="./images/bow.png"
+        class="about-sticker bow-sticker"
+        alt=""
+    >
+
+    <img
+        src="./images/fig.png"
+        class="about-sticker fig-sticker"
+        alt=""
+    >
+
+    <img
+        src="./images/button.png"
+        class="about-sticker button-sticker"
+        alt=""
+    >
+
+    <img
+        src="./images/fish.png"
+        class="about-sticker fish-sticker"
+        alt=""
+    >
+
+</div>
+            </div>
+
+        </div>
+
+    </main>
+<script>
+    const aboutTabs =
+        document.querySelectorAll(".about-tab-interactive");
+
+    const aboutPopups =
+        document.querySelectorAll(".about-side-popup");
+
+
+    function closeAboutPopups() {
+        aboutPopups.forEach((popup) => {
+            popup.classList.remove("is-open");
+        });
+    }
+
+
+    aboutTabs.forEach((tab) => {
+
+        tab.addEventListener("click", (event) => {
+
+            /*
+                Prevent this same click from immediately
+                triggering the document click below.
+            */
+            event.stopPropagation();
+
+            const popupId = tab.dataset.popup;
+            const popup = document.getElementById(popupId);
+
+            const alreadyOpen =
+                popup.classList.contains("is-open");
+
+            closeAboutPopups();
+
+            if (!alreadyOpen) {
+                popup.classList.add("is-open");
+            }
+
+        });
+
+    });
+
+
+    /*
+        After a box is open, clicking anywhere
+        closes it again.
+    */
+    document.addEventListener("click", () => {
+        closeAboutPopups();
+    });
+    
+    
+</script>
+</body>

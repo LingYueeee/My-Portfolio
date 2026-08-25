@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Creative Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <a href="./about.html">ABOUT</a>
+    <a href="./work.html">WORK</a>
+    <a href="./contact.html">CONTACT</a>
+</nav>
+
+    <section class="hero">
+    <div class="intro-text">Hello my name is</div>
+    <div class="name-text">Gia Khanh</div>
+
+    <div class="banner-area">
+
+    <div class="rounded-banner">
+
+        <div class="eye-artwork">
+
+            <img src="./images/white.png"
+                 class="eye-layer eye-white"
+                 alt="">
+
+            <img src="./images/left.png"
+                 class="eye-layer left-iris"
+                 alt="">
+
+            <img src="./images/right.png"
+                 class="eye-layer right-iris"
+                 alt="">
+
+            <img src="./images/face.png"
+                 class="eye-layer face-layer"
+                 alt="">
+
+        </div>
+
+    </div>
+
+    <!-- CAMERA -->
+<div class="sticker-item camera-item">
+
+    <img
+        src="./images/camera.png"
+        class="sticker camera-sticker"
+        alt="Camera"
+    >
+
+    <div class="sticker-popup popup-right">
+        <h3>Photography</h3>
+
+        <p>
+            I enjoy photography because to my view, it's important
+            to cherish and capture every moment in my life.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- DISK -->
+<div class="sticker-item disk-item">
+
+    <img
+        src="./images/disk.png"
+        class="sticker disk-sticker"
+        alt="Music"
+    >
+
+    <div class="sticker-popup popup-right">
+        <h3>Music</h3>
+
+        <p>
+            I love listening to music, especially ballads.
+            One of my favorite artists is Kenshi Yonezu.
+            I have also been playing the piano since I was 10.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- PEN -->
+<div class="sticker-item pen-item">
+
+    <img
+        src="./images/pen.png"
+        class="sticker pen-sticker"
+        alt="Drawing"
+    >
+
+    <div class="sticker-popup popup-left drawing-popup">
+        <h3>Drawing</h3>
+
+        <p>
+            Drawing is one of my greatest passions. Ever since I was
+            barely able to speak, I expressed that passion by scribbling
+            everywhere, from the walls of my home to the pages of my
+            notebooks. I have kept practicing drawing every day, and all
+            those years of dedication have brought me to where I am today.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- MAKEUP -->
+<div class="sticker-item makeup-item">
+
+    <img
+        src="./images/makeup.png"
+        class="sticker makeup-sticker"
+        alt="Makeup"
+    >
+
+    <div class="sticker-popup popup-left">
+        <h3>Makeup & Cosplay</h3>
+
+        <p>
+            I enjoy makeup just as much as I enjoy drawing because
+            to me, makeup is also a form of art. I also enjoy doing
+            a lot of cosplay.
+        </p>
+    </div>
+
+</div>
+</div>
+</div>  
+
+</div>
+</div>
+</section>
+</section>
+</body>
+<script>
+    const stickerItems = document.querySelectorAll(".sticker-item");
+
+    stickerItems.forEach((item) => {
+
+        const sticker = item.querySelector(".sticker");
+        const popup = item.querySelector(".sticker-popup");
+
+        sticker.addEventListener("mouseenter", () => {
+            popup.classList.add("show-popup");
+        });
+
+        sticker.addEventListener("mouseleave", () => {
+            popup.classList.remove("show-popup");
+        });
+
+    });
+</script>
+<script>
+    const banner = document.querySelector(".rounded-banner");
+
+    const leftIris = document.querySelector(".left-iris");
+    const rightIris = document.querySelector(".right-iris");
+
+    const maxMove = 30;
+
+
+    const smoothness = 0.08;
+
+    let targetX = 0;
+    let targetY = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+
+
+    document.addEventListener("mousemove", (event) => {
+
+        const rect = banner.getBoundingClientRect();
+
+        // Center of the whole face/banner
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = event.clientX - centerX;
+        const deltaY = event.clientY - centerY;
+
+        const distance = Math.sqrt(
+            deltaX * deltaX +
+            deltaY * deltaY
+        );
+
+        if (distance === 0) return;
+
+    
+
+        targetX = (deltaX / distance) * maxMove;
+        targetY = (deltaY / distance) * maxMove;
+    });
+
+
+    function animateEyes() {
+
+   
+        currentX += (targetX - currentX) * smoothness;
+        currentY += (targetY - currentY) * smoothness;
+
+        const movement =
+            `translate(${currentX}px, ${currentY}px)`;
+
+    
+        leftIris.style.transform = movement;
+        rightIris.style.transform = movement;
+
+        requestAnimationFrame(animateEyes);
+    }
+
+    animateEyes();
+</script>
+</script>
+</html>
